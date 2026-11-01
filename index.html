@@ -1,298 +1,271 @@
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Serif+Armenian:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;500;600;700;800&display=swap');
 
-.magic-ad {
-  position: relative;
-  width: 100%;
-  height: 85vh;
-  min-height: 680px;
-  max-height: 850px;
-  overflow: hidden;
-  background: #170d12;
-  color: #fff;
-  font-family: 'Noto Serif Armenian', serif;
-  isolation: isolate;
+#magic-show {
+  position:relative;
+  width:100%;
+  height: min(850px, 85vh);
+  min-height:680px;
+  overflow:hidden;
+  background:#160d12;
+  color:white;
+  font-family:'Noto Serif Armenian',serif;
+  isolation:isolate;
 }
 
-.magic-ad video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
+#magic-show video {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
 }
 
-.magic-ad::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+#magic-show:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
   background:
     linear-gradient(90deg,
-      rgba(20,7,13,.86),
-      rgba(20,7,13,.48) 55%,
-      rgba(20,7,13,.10)),
-    linear-gradient(0deg, rgba(0,0,0,.35), transparent);
+      rgba(15,5,12,.82) 0%,
+      rgba(15,5,12,.48) 48%,
+      rgba(15,5,12,.08) 100%),
+    linear-gradient(0deg,
+      rgba(15,5,12,.35),
+      transparent 55%);
 }
 
-.magic-content {
-  position: absolute;
-  top: 50%;
-  left: 8%;
-  transform: translateY(-50%);
-  max-width: 650px;
-  padding: 25px;
-  text-align: left;
+.magic-inner {
+  position:absolute;
+  top:50%;
+  left:8%;
+  transform:translateY(-50%);
+  max-width:620px;
+  padding:25px;
 }
 
-.magic-label {
-  color: #ffe0a3;
-  font-size: 13px;
-  letter-spacing: 2px;
-  animation: fadeIn 1s both;
+.magic-kicker {
+  color:#ffe0a5;
+  font-size:14px;
+  letter-spacing:2px;
+  animation:magicFade 1s both;
 }
 
-.magic-title {
-  font-family: 'Noto Serif Armenian', serif;
-  font-size: clamp(45px, 7vw, 82px);
-  line-height: 1.2;
-  font-weight: 700;
-  margin: 25px 0;
-  text-shadow: 0 4px 25px rgba(0,0,0,.3);
-  animation: riseIn 1s .3s both;
+.magic-heading {
+  font-size:clamp(48px,7vw,85px);
+  line-height:1.25;
+  font-weight:800;
+  margin:25px 0;
+  text-shadow:0 5px 25px rgba(0,0,0,.4);
+  animation:magicUp 1s .3s both;
 }
 
-.magic-title span {
-  display: block;
-  color: #ffdc9b;
+.magic-heading span {
+  display:block;
+  color:#ffdda0;
 }
 
-.magic-description {
-  font-size: clamp(15px, 1.5vw, 19px);
-  line-height: 1.9;
-  color: #fff8ee;
-  animation: riseIn 1s .6s both;
+.magic-text {
+  font-size:17px;
+  line-height:2;
+  color:#fff8ed;
+  animation:magicUp 1s .6s both;
 }
 
-.magic-price {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 18px 30px;
-  border: 1px solid #f5d18e;
-  background: rgba(40,17,22,.75);
-  box-shadow: 0 0 35px rgba(255,205,123,.16);
-  animation: boom 1s 1s both;
+.magic-offer {
+  display:inline-block;
+  margin-top:25px;
+  padding:19px 30px;
+  border:1px solid #ffdb98;
+  background:rgba(35,15,23,.8);
+  box-shadow:0 0 35px rgba(255,204,124,.2);
+  animation:magicBoom 1.2s 1s both;
 }
 
-.magic-price small {
-  display: block;
-  color: #ffdc9b;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+.magic-offer small {
+  display:block;
+  font-size:17px;
+  font-weight:800;
+  color:#ffda96;
+  margin-bottom:7px;
+  letter-spacing:2px;
 }
 
-.magic-price strong {
-  display: block;
-  color: #ffe3aa;
-  font-size: 46px;
-  font-weight: 800;
+.magic-offer strong {
+  display:block;
+  font-size:48px;
+  color:#fff0c9;
+  font-weight:800;
 }
 
-.magic-gift {
-  margin-top: 22px;
-  color: #fff5df;
-  font-size: 17px;
-  animation: riseIn 1s 1.4s both;
+.magic-contact {
+  margin-top:25px;
+  font-size:16px;
+  line-height:1.9;
+  color:#fff4e5;
+  animation:magicUp 1s 1.4s both;
 }
 
-.magic-gift span {
-  color: #ffdc9b;
-  font-weight: 800;
+.magic-phone {
+  display:inline-block;
+  margin-top:20px;
+  padding:17px 27px;
+  background:linear-gradient(135deg,#ffe5b0,#d5a45e);
+  color:#321b17 !important;
+  text-decoration:none !important;
+  font-size:16px;
+  font-weight:800;
+  border-radius:4px;
+  box-shadow:0 8px 30px rgba(255,204,124,.25);
+  transition:.3s;
+  animation:magicUp 1s 1.7s both;
 }
 
-.magic-cta {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 18px 28px;
-  background: linear-gradient(135deg,#ffe5ae,#d5a65d);
-  color: #321c18 !important;
-  text-decoration: none !important;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 800;
-  box-shadow: 0 8px 30px rgba(255,206,133,.25);
-  transition: .3s ease;
-  animation: riseIn 1s 1.7s both;
+.magic-phone:hover {
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 12px 35px rgba(255,204,124,.45);
 }
 
-.magic-cta:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 12px 35px rgba(255,206,133,.45);
+.magic-star {
+  position:absolute;
+  color:#ffe1a5;
+  text-shadow:0 0 20px #ffda96;
+  pointer-events:none;
+  animation:magicSparkle 3s infinite;
 }
 
-.magic-sparkle {
-  position: absolute;
-  color: #ffe2a5;
-  text-shadow: 0 0 18px #ffda8a;
-  pointer-events: none;
-  animation: sparkle 3s infinite ease-in-out;
+.magic-star:nth-of-type(2) {
+  top:15%;
+  right:14%;
+  font-size:35px;
 }
 
-.magic-sparkle.one {
-  top: 16%;
-  right: 14%;
-  font-size: 35px;
+.magic-star:nth-of-type(3) {
+  top:65%;
+  right:20%;
+  font-size:25px;
+  animation-delay:1s;
 }
 
-.magic-sparkle.two {
-  top: 70%;
-  right: 22%;
-  font-size: 24px;
-  animation-delay: 1s;
+.magic-star:nth-of-type(4) {
+  top:35%;
+  right:8%;
+  font-size:18px;
+  animation-delay:2s;
 }
 
-.magic-sparkle.three {
-  top: 38%;
-  right: 8%;
-  font-size: 20px;
-  animation-delay: 2s;
-}
-
-.magic-butterfly {
-  position: absolute;
-  top: 45%;
-  right: 12%;
-  font-size: 60px;
-  filter: drop-shadow(0 0 20px #f5d69a);
-  animation: butterflyFloat 4s infinite ease-in-out;
-}
-
-@keyframes fadeIn {
+@keyframes magicFade {
   from {opacity:0}
   to {opacity:1}
 }
 
-@keyframes riseIn {
+@keyframes magicUp {
   from {opacity:0;transform:translateY(30px)}
   to {opacity:1;transform:translateY(0)}
 }
 
-@keyframes boom {
+@keyframes magicBoom {
   0% {opacity:0;transform:scale(.5)}
   65% {opacity:1;transform:scale(1.12)}
   100% {opacity:1;transform:scale(1)}
 }
 
-@keyframes sparkle {
-  0%,100% {opacity:.35;transform:scale(.7) rotate(0)}
+@keyframes magicSparkle {
+  0%,100% {opacity:.3;transform:scale(.7) rotate(0)}
   50% {opacity:1;transform:scale(1.5) rotate(35deg)}
 }
 
-@keyframes butterflyFloat {
-  0%,100% {transform:translateY(0) rotate(-8deg)}
-  50% {transform:translateY(-22px) rotate(8deg)}
-}
-
 @media(max-width:600px) {
-  .magic-ad {
-    height: 740px;
-    min-height: 740px;
+  #magic-show {
+    height:740px;
+    min-height:740px;
   }
 
-  .magic-ad::before {
-    background:
-      linear-gradient(0deg,
-        rgba(20,7,13,.96),
-        rgba(20,7,13,.58) 70%,
-        rgba(20,7,13,.20));
+  #magic-show:before {
+    background:linear-gradient(
+      0deg,
+      rgba(15,5,12,.96),
+      rgba(15,5,12,.65) 65%,
+      rgba(15,5,12,.12)
+    );
   }
 
-  .magic-content {
-    left: 0;
-    right: 0;
-    top: auto;
-    bottom: 5%;
-    transform: none;
-    text-align: center;
-    padding: 22px;
+  .magic-inner {
+    left:0;
+    right:0;
+    top:auto;
+    bottom:5%;
+    transform:none;
+    padding:22px;
+    text-align:center;
   }
 
-  .magic-title {
-    font-size: 48px;
-    margin: 17px 0;
+  .magic-heading {
+    font-size:49px;
+    margin:18px 0;
   }
 
-  .magic-description {
-    font-size: 14px;
+  .magic-text {
+    font-size:14px;
   }
 
-  .magic-price strong {
-    font-size: 39px;
+  .magic-offer strong {
+    font-size:40px;
   }
 
-  .magic-gift {
-    font-size: 14px;
+  .magic-contact {
+    font-size:14px;
   }
 
-  .magic-butterfly {
-    top: 9%;
-    right: 12%;
-    font-size: 43px;
-  }
-
-  .magic-cta {
-    font-size: 12px;
-    padding: 16px 20px;
+  .magic-phone {
+    font-size:14px;
+    padding:16px 22px;
   }
 }
 </style>
 
-<section class="magic-ad">
+<section id="magic-show">
 
   <video autoplay muted loop playsinline preload="auto">
-    <source src="https://cdn.shopify.com/videos/c/o/v/adc31d5aff7e4065a1123a987ecc2293.mov" type="video/quicktime">
+    <source src="https://cdn.shopify.com/videos/c/o/v/c6c96545bd9b417695bcf4ce3eaed46e.mov" type="video/quicktime">
   </video>
 
-  <div class="magic-sparkle one">✧</div>
-  <div class="magic-sparkle two">✦</div>
-  <div class="magic-sparkle three">✧</div>
+  <div class="magic-star">✧</div>
+  <div class="magic-star">✦</div>
+  <div class="magic-star">✧</div>
 
-  <div class="magic-butterfly">🦋</div>
+  <div class="magic-inner">
 
-  <div class="magic-content">
-
-    <div class="magic-label">
+    <div class="magic-kicker">
       ✨ ԱՆՄՈՌԱՆԱԼԻ ՏՊԱՎՈՐՈՒԹՅՈՒՆՆԵՐ ✨
     </div>
 
-    <h1 class="magic-title">
+    <h1 class="magic-heading">
       ԿԱԽԱՐԴԱԿԱՆ
       <span>ՇՈՈՒ</span>
     </h1>
 
-    <p class="magic-description">
-      Ստեղծեք հեքիաթային մթնոլորտ
-      և պարգևեք Ձեր հյուրերին
-      անմոռանալի պահեր։
+    <p class="magic-text">
+      Պարգևեք Ձեր միջոցառմանը
+      կախարդական մթնոլորտ և
+      անմոռանալի հիշողություններ։
     </p>
 
-    <div class="magic-price">
+    <div class="magic-offer">
       <small>🔥 ԲՈՒՄ ԱԿՑԻԱ 🔥</small>
       <strong>65,000 ֏</strong>
     </div>
 
-    <div class="magic-gift">
-      🦋 <span>ՆՎԵՐ՝</span> ԼՈՒՍԱՅԻՆ ԹԻԹԵՌ ✨
+    <div class="magic-contact">
+      Հարցերի և ամրագրումների համար<br>
+      զանգահարեք մեզ։
     </div>
 
-    <a
-      href="tel:+37441666018"
-      class="magic-cta">
-      ԶԱՆԳԱՀԱՐԵՔ ԵՎ ԱՄՐԱԳՐԵՔ ↗
+    <a class="magic-phone" href="tel:+37441666018">
+      ☎ ԶԱՆԳԱՀԱՐԵՔ՝ +374 41 666 018
     </a>
 
   </div>
