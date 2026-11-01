@@ -1,35 +1,181 @@
-<div class="angel-gift">
-  🎁 ՆՎԵՐ՝
-  <span>ԼՈՒՍԱՅԻՆ ԹԻԹԵՌ</span>
-</div>
+
+<section id="angel-promo">
+  <video
+    class="angel-promo-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    webkit-playsinline
+  >
+    <source
+      src="https://cdn.shopify.com/videos/c/o/v/c6c96545bd9b417695bcf4ce3eaed46e.mov"
+      type="video/quicktime"
+    >
+  </video>
+
+  <div class="angel-promo-overlay"></div>
+
+  <div class="angel-promo-content">
+    <div class="angel-promo-title">
+      ՀՐԵՇՏԱԿԻ ՄԵԾ ՏԱՌԵՐ
+    </div>
+
+    <div class="angel-promo-label">
+      ԲՈՒՄ ԱԿՑԻԱ
+    </div>
+
+    <div class="angel-promo-price">
+      65,000 <span>֏</span>
+    </div>
+
+    <div class="angel-promo-gift">
+      🎁 ՆՎԵՐ՝
+      <strong>ԼՈՒՍԱՅԻՆ ԹԻԹԵՌ</strong>
+    </div>
+  </div>
+</section>
 
 <style>
-.angel-gift {
-  margin: 25px auto;
+#angel-promo {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  overflow: hidden;
+  background: #160d24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  font-family: Arial, sans-serif;
+}
+
+#angel-promo .angel-promo-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+#angel-promo .angel-promo-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 7, 27, 0.72),
+    rgba(15, 7, 27, 0.25),
+    rgba(15, 7, 27, 0.72)
+  );
+}
+
+#angel-promo .angel-promo-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+  padding: 55px 20px;
   text-align: center;
-  font-family: inherit;
-  font-size: 25px;
-  font-weight: 900;
-  color: #ffe58a;
-  text-shadow: 0 0 12px rgba(255, 220, 100, 0.8);
-  animation: giftGlow 1.8s infinite alternate;
-}
-
-.angel-gift span {
-  display: block;
-  font-size: 34px;
-  margin-top: 8px;
   color: #fff;
-  letter-spacing: 1px;
 }
 
-@keyframes giftGlow {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
+#angel-promo .angel-promo-title {
+  font-size: clamp(30px, 5vw, 58px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 18px #000;
+  margin-bottom: 30px;
+}
+
+#angel-promo .angel-promo-label {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #e72b55;
+  color: #fff;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  transform: rotate(-2deg);
+  box-shadow: 0 5px 25px rgba(0,0,0,.35);
+}
+
+#angel-promo .angel-promo-price {
+  margin: 25px 0;
+  color: #ffe48a;
+  font-size: clamp(52px, 9vw, 100px);
+  font-weight: 900;
+  line-height: 1.1;
+  text-shadow:
+    0 0 12px rgba(255,220,120,.7),
+    0 4px 15px #000;
+}
+
+#angel-promo .angel-promo-price span {
+  font-size: .65em;
+}
+
+#angel-promo .angel-promo-gift {
+  margin-top: 25px;
+  color: #ffe9a8;
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.5;
+  text-shadow: 0 3px 12px #000;
+}
+
+#angel-promo .angel-promo-gift strong {
+  display: block;
+  color: #fff;
+  font-size: clamp(27px, 4vw, 43px);
+  font-weight: 900;
+  text-shadow: 0 0 15px rgba(255,220,120,.7);
 }
 
 @media (max-width: 600px) {
-  .angel-gift { font-size: 21px; }
-  .angel-gift span { font-size: 27px; }
+  #angel-promo {
+    min-height: 570px;
+  }
+
+  #angel-promo .angel-promo-content {
+    padding: 40px 15px;
+  }
+
+  #angel-promo .angel-promo-title {
+    margin-bottom: 25px;
+  }
+
+  #angel-promo .angel-promo-label {
+    padding: 10px 22px;
+  }
 }
 </style>
+
+<script>
+(function () {
+  var section = document.getElementById('angel-promo');
+  if (!section) return;
+
+  var video = section.querySelector('video');
+  if (!video) return;
+
+  video.muted = true;
+  video.defaultMuted = true;
+
+  var playVideo = function () {
+    var result = video.play();
+    if (result && typeof result.catch === 'function') {
+      result.catch(function () {});
+    }
+  };
+
+  playVideo();
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) playVideo();
+  });
+})();
+</script>
