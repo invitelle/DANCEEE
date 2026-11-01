@@ -1,162 +1,181 @@
 
-<section id="angel-promo">
+<section id="angel-wings-ad">
   <video
-    class="angel-promo-video"
     autoplay
     muted
     loop
     playsinline
-    preload="auto"
     webkit-playsinline
+    preload="auto"
   >
     <source
-      src="https://cdn.shopify.com/videos/c/o/v/c6c96545bd9b417695bcf4ce3eaed46e.mov"
+      src="https://cdn.shopify.com/videos/c/o/v/4a988ce0ab5a45bf8d4d78ac22549e88.mov"
       type="video/quicktime"
     >
   </video>
 
-  <div class="angel-promo-overlay"></div>
+  <div class="angel-wings-shade"></div>
 
-  <div class="angel-promo-content">
-    <div class="angel-promo-title">
-      ՀՐԵՇՏԱԿԻ ՄԵԾ ՏԱՌԵՐ
+  <div class="angel-wings-text">
+    <div class="angel-wings-heading">
+      ՀՐԵՇՏԱԿԻ ԹԵՎԵՐ
     </div>
 
-    <div class="angel-promo-label">
-      ԲՈՒՄ ԱԿՑԻԱ
+    <div class="angel-wings-gift">
+      ՆՎԵՐ՝ ԼՈՒՍԱՅԻՆ ԹԻԹԵՌ
     </div>
 
-    <div class="angel-promo-price">
-      65,000 <span>֏</span>
-    </div>
-
-    <div class="angel-promo-gift">
-      🎁 ՆՎԵՐ՝
-      <strong>ԼՈՒՍԱՅԻՆ ԹԻԹԵՌ</strong>
+    <div class="angel-wings-offer">
+      <span>ԱԿՑԻԱ</span>
+      <strong>55,000 ֏</strong>
     </div>
   </div>
 </section>
 
 <style>
-#angel-promo {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@500;600;700;800&display=swap');
+
+#angel-wings-ad {
   position: relative;
   width: 100%;
-  min-height: 650px;
+  height: min(720px, 75vw);
+  min-height: 420px;
   overflow: hidden;
-  background: #160d24;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #17101b;
   isolation: isolate;
-  font-family: Arial, sans-serif;
+  font-family: 'Noto Serif Armenian', serif;
 }
 
-#angel-promo .angel-promo-video {
+#angel-wings-ad video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: -2;
 }
 
-#angel-promo .angel-promo-overlay {
+#angel-wings-ad .angel-wings-shade {
   position: absolute;
   inset: 0;
   z-index: -1;
   background: linear-gradient(
     90deg,
-    rgba(15, 7, 27, 0.72),
-    rgba(15, 7, 27, 0.25),
-    rgba(15, 7, 27, 0.72)
+    rgba(15, 8, 20, 0.62) 0%,
+    rgba(15, 8, 20, 0.24) 35%,
+    transparent 70%
   );
 }
 
-#angel-promo .angel-promo-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 850px;
-  padding: 55px 20px;
-  text-align: center;
+#angel-wings-ad .angel-wings-text {
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 470px;
+  padding: 22px 25px;
   color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,.65);
 }
 
-#angel-promo .angel-promo-title {
-  font-size: clamp(30px, 5vw, 58px);
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: 1px;
-  text-shadow: 0 3px 18px #000;
-  margin-bottom: 30px;
-}
-
-#angel-promo .angel-promo-label {
-  display: inline-block;
-  padding: 12px 30px;
-  background: #e72b55;
-  color: #fff;
-  font-size: clamp(22px, 3vw, 34px);
-  font-weight: 900;
-  letter-spacing: 2px;
-  transform: rotate(-2deg);
-  box-shadow: 0 5px 25px rgba(0,0,0,.35);
-}
-
-#angel-promo .angel-promo-price {
-  margin: 25px 0;
-  color: #ffe48a;
-  font-size: clamp(52px, 9vw, 100px);
-  font-weight: 900;
-  line-height: 1.1;
-  text-shadow:
-    0 0 12px rgba(255,220,120,.7),
-    0 4px 15px #000;
-}
-
-#angel-promo .angel-promo-price span {
-  font-size: .65em;
-}
-
-#angel-promo .angel-promo-gift {
-  margin-top: 25px;
-  color: #ffe9a8;
-  font-size: clamp(22px, 3.5vw, 36px);
+#angel-wings-ad .angel-wings-heading {
+  font-size: clamp(25px, 3.5vw, 43px);
   font-weight: 800;
-  line-height: 1.5;
-  text-shadow: 0 3px 12px #000;
+  line-height: 1.35;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
 }
 
-#angel-promo .angel-promo-gift strong {
-  display: block;
+#angel-wings-ad .angel-wings-gift {
+  font-size: clamp(17px, 2vw, 23px);
+  font-weight: 700;
+  color: #ffe5a5;
+  margin-bottom: 23px;
+}
+
+#angel-wings-ad .angel-wings-offer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+#angel-wings-ad .angel-wings-offer span {
+  background: #b92e55;
   color: #fff;
-  font-size: clamp(27px, 4vw, 43px);
-  font-weight: 900;
-  text-shadow: 0 0 15px rgba(255,220,120,.7);
+  padding: 8px 15px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+#angel-wings-ad .angel-wings-offer strong {
+  color: #ffe6a2;
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 @media (max-width: 600px) {
-  #angel-promo {
-    min-height: 570px;
+  #angel-wings-ad {
+    height: 570px;
+    min-height: 0;
   }
 
-  #angel-promo .angel-promo-content {
-    padding: 40px 15px;
+  #angel-wings-ad video {
+    object-position: center;
   }
 
-  #angel-promo .angel-promo-title {
-    margin-bottom: 25px;
+  #angel-wings-ad .angel-wings-shade {
+    background: linear-gradient(
+      0deg,
+      rgba(12, 7, 18, .76) 0%,
+      rgba(12, 7, 18, .22) 48%,
+      transparent 78%
+    );
   }
 
-  #angel-promo .angel-promo-label {
-    padding: 10px 22px;
+  #angel-wings-ad .angel-wings-text {
+    top: auto;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    transform: none;
+    max-width: 100%;
+    padding: 18px 15px;
+    text-align: center;
+  }
+
+  #angel-wings-ad .angel-wings-heading {
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+
+  #angel-wings-ad .angel-wings-gift {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+
+  #angel-wings-ad .angel-wings-offer {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #angel-wings-ad .angel-wings-offer span {
+    font-size: 15px;
+    padding: 7px 12px;
+  }
+
+  #angel-wings-ad .angel-wings-offer strong {
+    font-size: 37px;
   }
 }
 </style>
 
 <script>
 (function () {
-  var section = document.getElementById('angel-promo');
+  var section = document.getElementById('angel-wings-ad');
   if (!section) return;
 
   var video = section.querySelector('video');
@@ -165,17 +184,17 @@
   video.muted = true;
   video.defaultMuted = true;
 
-  var playVideo = function () {
-    var result = video.play();
-    if (result && typeof result.catch === 'function') {
-      result.catch(function () {});
+  var play = function () {
+    var promise = video.play();
+    if (promise && promise.catch) {
+      promise.catch(function () {});
     }
   };
 
-  playVideo();
+  play();
 
   document.addEventListener('visibilitychange', function () {
-    if (!document.hidden) playVideo();
+    if (!document.hidden) play();
   });
 })();
 </script>
