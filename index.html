@@ -1,257 +1,35 @@
+<div class="angel-gift">
+  🎁 ՆՎԵՐ՝
+  <span>ԼՈՒՍԱՅԻՆ ԹԻԹԵՌ</span>
+</div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;500;600;700;800&display=swap');
-
-#magic-show {
-  position:relative;
-  width:100%;
-  height: min(850px, 85vh);
-  min-height:680px;
-  overflow:hidden;
-  background:#160d12;
-  color:white;
-  font-family:'Noto Serif Armenian',serif;
-  isolation:isolate;
+.angel-gift {
+  margin: 25px auto;
+  text-align: center;
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 900;
+  color: #ffe58a;
+  text-shadow: 0 0 12px rgba(255, 220, 100, 0.8);
+  animation: giftGlow 1.8s infinite alternate;
 }
 
-#magic-show video {
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-2;
+.angel-gift span {
+  display: block;
+  font-size: 34px;
+  margin-top: 8px;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
-#magic-show:before {
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:
-    linear-gradient(90deg,
-      rgba(15,5,12,.82) 0%,
-      rgba(15,5,12,.48) 48%,
-      rgba(15,5,12,.08) 100%),
-    linear-gradient(0deg,
-      rgba(15,5,12,.35),
-      transparent 55%);
+@keyframes giftGlow {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
 }
 
-.magic-inner {
-  position:absolute;
-  top:50%;
-  left:8%;
-  transform:translateY(-50%);
-  max-width:620px;
-  padding:25px;
-}
-
-.magic-kicker {
-  color:#ffe0a5;
-  font-size:14px;
-  letter-spacing:2px;
-  animation:magicFade 1s both;
-}
-
-.magic-heading {
-  font-size:clamp(48px,7vw,85px);
-  line-height:1.25;
-  font-weight:800;
-  margin:25px 0;
-  text-shadow:0 5px 25px rgba(0,0,0,.4);
-  animation:magicUp 1s .3s both;
-}
-
-.magic-heading span {
-  display:block;
-  color:#ffdda0;
-}
-
-.magic-text {
-  font-size:17px;
-  line-height:2;
-  color:#fff8ed;
-  animation:magicUp 1s .6s both;
-}
-
-.magic-offer {
-  display:inline-block;
-  margin-top:25px;
-  padding:19px 30px;
-  border:1px solid #ffdb98;
-  background:rgba(35,15,23,.8);
-  box-shadow:0 0 35px rgba(255,204,124,.2);
-  animation:magicBoom 1.2s 1s both;
-}
-
-.magic-offer small {
-  display:block;
-  font-size:17px;
-  font-weight:800;
-  color:#ffda96;
-  margin-bottom:7px;
-  letter-spacing:2px;
-}
-
-.magic-offer strong {
-  display:block;
-  font-size:48px;
-  color:#fff0c9;
-  font-weight:800;
-}
-
-.magic-contact {
-  margin-top:25px;
-  font-size:16px;
-  line-height:1.9;
-  color:#fff4e5;
-  animation:magicUp 1s 1.4s both;
-}
-
-.magic-phone {
-  display:inline-block;
-  margin-top:20px;
-  padding:17px 27px;
-  background:linear-gradient(135deg,#ffe5b0,#d5a45e);
-  color:#321b17 !important;
-  text-decoration:none !important;
-  font-size:16px;
-  font-weight:800;
-  border-radius:4px;
-  box-shadow:0 8px 30px rgba(255,204,124,.25);
-  transition:.3s;
-  animation:magicUp 1s 1.7s both;
-}
-
-.magic-phone:hover {
-  transform:translateY(-4px) scale(1.03);
-  box-shadow:0 12px 35px rgba(255,204,124,.45);
-}
-
-.magic-star {
-  position:absolute;
-  color:#ffe1a5;
-  text-shadow:0 0 20px #ffda96;
-  pointer-events:none;
-  animation:magicSparkle 3s infinite;
-}
-
-.magic-star:nth-of-type(2) {
-  top:15%;
-  right:14%;
-  font-size:35px;
-}
-
-.magic-star:nth-of-type(3) {
-  top:65%;
-  right:20%;
-  font-size:25px;
-  animation-delay:1s;
-}
-
-.magic-star:nth-of-type(4) {
-  top:35%;
-  right:8%;
-  font-size:18px;
-  animation-delay:2s;
-}
-
-@keyframes magicFade {
-  from {opacity:0}
-  to {opacity:1}
-}
-
-@keyframes magicUp {
-  from {opacity:0;transform:translateY(30px)}
-  to {opacity:1;transform:translateY(0)}
-}
-
-@keyframes magicBoom {
-  0% {opacity:0;transform:scale(.5)}
-  65% {opacity:1;transform:scale(1.12)}
-  100% {opacity:1;transform:scale(1)}
-}
-
-@keyframes magicSparkle {
-  0%,100% {opacity:.3;transform:scale(.7) rotate(0)}
-  50% {opacity:1;transform:scale(1.5) rotate(35deg)}
-}
-
-@media(max-width:600px) {
-  #magic-show {
-    height:740px;
-    min-height:740px;
-  }
-
-  #magic-show:before {
-    background:linear-gradient(
-      0deg,
-      rgba(15,5,12,.96),
-      rgba(15,5,12,.65) 65%,
-      rgba(15,5,12,.12)
-    );
-  }
-
-  .magic-inner {
-    left:0;
-    right:0;
-    top:auto;
-    bottom:5%;
-    transform:none;
-    padding:22px;
-    text-align:center;
-  }
-
-  .magic-heading {
-    font-size:49px;
-    margin:18px 0;
-  }
-
-  .magic-text {
-    font-size:14px;
-  }
-
-  .magic-offer strong {
-    font-size:40px;
-  }
-
-  .magic-contact {
-    font-size:14px;
-  }
-
-  .magic-phone {
-    font-size:14px;
-    padding:16px 22px;
-  }
+@media (max-width: 600px) {
+  .angel-gift { font-size: 21px; }
+  .angel-gift span { font-size: 27px; }
 }
 </style>
-
-<section id="magic-show">
-
-  <video autoplay muted loop playsinline preload="auto">
-    <source src="https://cdn.shopify.com/videos/c/o/v/c6c96545bd9b417695bcf4ce3eaed46e.mov" type="video/quicktime">
-  </video>
-
-  <div class="magic-star">✧</div>
-  <div class="magic-star">✦</div>
-  <div class="magic-star">✧</div>
-
-  <div class="magic-inner">
-
-    <div class="magic-kicker">
-      ✨ ԱՆՄՈՌԱՆԱԼԻ ՏՊԱՎՈՐՈՒԹՅՈՒՆՆԵՐ ✨
-    </div>
-
-    <h1 class="magic-heading">
-      ԿԱԽԱՐԴԱԿԱՆ
-      <span>ՇՈՈՒ</span>
-    </h1>
-
-    <div class="magic-offer">
-      <small>🔥 ԲՈՒՄ ԱԿՑԻԱ 🔥</small>
-      <strong>65,000 ֏</strong>
-    </div>
-
-    
-</section>
